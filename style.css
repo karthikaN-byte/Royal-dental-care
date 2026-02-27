@@ -1,128 +1,56 @@
- body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    color: #333;
-    background-color: #f4f9ff;
-}
-
-header {
-    background: #0056b3;
-    color: white;
-    padding: 2rem;
+#gallery {
+    background: #eef4fb;
     text-align: center;
 }
 
-section {
-    padding: 20px;
-    max-width: 600px;
-    margin: auto;
-    background: white;
-    margin-top: 20px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-form input {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-button {
-    background: #28a745;
-    color: white;
-    border: none;
-    padding: 10px 20px;#reviews {
-    background: #fff;
-    text-align: center;
-}
-
-.rating-summary {
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    color: #444;
-}
-
-.stars {
-    color: #fbbc04; /* Google Star Yellow */
-    font-size: 1.5rem;
-}
-
-.review-grid {
+.gallery-grid {
     display: grid;
-    gap: 15px;
-    margin-bottom: 20px;
+    /* We change minmax(280px, 1fr) to minmax(200px, 1fr) 
+       This allows more (and therefore smaller) items per row on larger screens. */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px; /* Reduced gap slightly to fit smaller images */
+    margin-top: 20px;
+    justify-content: center; /* Centers the grid if items don't fill the row */
 }
 
-.review-card {
-    background: #f9f9f9;
-    padding: 15px;
-    border-left: 4px solid #0056b3;
-    border-radius: 4px;
-    font-style: italic;
-    text-align: left;
+.gallery-item {
+    background: white;
+    padding: 8px; /* Slightly reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    
+    /* New: Max-width restricts how big the container can get. 
+       This is the primary change for reducing size. */
+    max-width: 250px; 
+    margin: 0 auto; /* Centers the item within its grid cell */
 }
 
-.review-card span {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-    font-style: normal;
-    color: #666;
-}
-
-.google-link a {
-    color: #0056b3;
-    text-decoration: underline;
-    font-size: 0.9rem;
-}
- 
-    cursor: pointer;
+.gallery-item img {
     width: 100%;
-    font-size: 1.1rem;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    
+    /* New: Max-height ensures images don't get too tall, 
+       maintaining a compact "Before & After" look. */
+    max-height: 180px; 
+    object-fit: cover; /* Ensures the image covers the area without distorting */
 }
 
-button:hover {
-    background: #218838;
-}
-.floating-call {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #28a745; /* Success Green */
-    color: white;
-    padding: 12px 20px;
-    border-radius: 50px; /* Makes it pill-shaped */
-    text-decoration: none;
-    font-weight: bold;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.image-labels {
     display: flex;
-    align-items: center;
-    gap: 10px;
-    z-index: 1000; /* Keeps it above the map and reviews */
-    transition: transform 0.2s;
+    justify-content: space-between;
+    margin-bottom: 6px; /* Slightly reduced margin */
+    font-size: 0.75rem; /* Slightly smaller text for smaller container */
+    font-weight: bold;
+    color: #0056b3;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-.floating-call:hover {
-    transform: scale(1.05);
-    background-color: #218838;
-}
-
-.phone-icon {
-    font-size: 1.2rem;
-}
-
-/* On very small screens, we can hide the text and just show the icon */
-@media (max-width: 400px) {
-    .call-text {
-        display: none;
-    }
-    .floating-call {
-        padding: 15px;
-        border-radius: 50%;
-    }
+.gallery-item p {
+    margin-top: 8px; /* Slightly reduced margin */
+    font-weight: 600;
+    color: #333;
+    font-size: 0.9rem; /* Slightly smaller text */
 }
