@@ -1,56 +1,45 @@
-#gallery {
-    background: #eef4fb;
-    text-align: center;
-}
-
+/* 1. The Container: Centers everything and limits the total width */
 .gallery-grid {
-    display: grid;
-    /* We change minmax(280px, 1fr) to minmax(200px, 1fr) 
-       This allows more (and therefore smaller) items per row on larger screens. */
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 15px; /* Reduced gap slightly to fit smaller images */
-    margin-top: 20px;
-    justify-content: center; /* Centers the grid if items don't fill the row */
+    display: flex; /* Changed from Grid to Flex for better control */
+    flex-wrap: wrap; /* Allows items to move to the next line */
+    gap: 15px;
+    justify-content: center; /* Centers the images on the screen */
+    padding: 10px;
 }
 
+/* 2. The Item: Strictly limits the size of the image "card" */
 .gallery-item {
     background: white;
-    padding: 8px; /* Slightly reduced padding */
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    
-    /* New: Max-width restricts how big the container can get. 
-       This is the primary change for reducing size. */
-    max-width: 250px; 
-    margin: 0 auto; /* Centers the item within its grid cell */
-}
-
-.gallery-item img {
-    width: 100%;
-    height: auto;
+    padding: 8px;
     border-radius: 8px;
-    display: block;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     
-    /* New: Max-height ensures images don't get too tall, 
-       maintaining a compact "Before & After" look. */
-    max-height: 180px; 
-    object-fit: cover; /* Ensures the image covers the area without distorting */
+    /* This is the most important part: */
+    width: 160px; /* Force the card to be exactly 160px wide */
+    flex-shrink: 0; /* Prevents the card from getting smaller than 160px */
 }
 
+/* 3. The Image: Fits perfectly inside the 160px card */
+.gallery-item img {
+    width: 100%; /* Fills the 160px container */
+    height: 120px; /* Fixed height for a uniform "thumbnail" look */
+    object-fit: cover; /* Crops the image to fit without stretching */
+    border-radius: 4px;
+    display: block;
+}
+
+/* 4. The Labels: Make text smaller to match the small images */
 .image-labels {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 6px; /* Slightly reduced margin */
-    font-size: 0.75rem; /* Slightly smaller text for smaller container */
+    font-size: 0.65rem; /* Tiny labels for tiny images */
     font-weight: bold;
     color: #0056b3;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    margin-bottom: 4px;
 }
 
 .gallery-item p {
-    margin-top: 8px; /* Slightly reduced margin */
-    font-weight: 600;
-    color: #333;
-    font-size: 0.9rem; /* Slightly smaller text */
+    font-size: 0.75rem; /* Smaller text for the description */
+    margin-top: 5px;
+    text-align: center;
 }
