@@ -36,7 +36,51 @@ button {
     background: #28a745;
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 10px 20px;#reviews {
+    background: #fff;
+    text-align: center;
+}
+
+.rating-summary {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #444;
+}
+
+.stars {
+    color: #fbbc04; /* Google Star Yellow */
+    font-size: 1.5rem;
+}
+
+.review-grid {
+    display: grid;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.review-card {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #0056b3;
+    border-radius: 4px;
+    font-style: italic;
+    text-align: left;
+}
+
+.review-card span {
+    display: block;
+    margin-top: 10px;
+    font-weight: bold;
+    font-style: normal;
+    color: #666;
+}
+
+.google-link a {
+    color: #0056b3;
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+ 
     cursor: pointer;
     width: 100%;
     font-size: 1.1rem;
