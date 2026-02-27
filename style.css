@@ -89,3 +89,40 @@ button {
 button:hover {
     background: #218838;
 }
+.floating-call {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #28a745; /* Success Green */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px; /* Makes it pill-shaped */
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000; /* Keeps it above the map and reviews */
+    transition: transform 0.2s;
+}
+
+.floating-call:hover {
+    transform: scale(1.05);
+    background-color: #218838;
+}
+
+.phone-icon {
+    font-size: 1.2rem;
+}
+
+/* On very small screens, we can hide the text and just show the icon */
+@media (max-width: 400px) {
+    .call-text {
+        display: none;
+    }
+    .floating-call {
+        padding: 15px;
+        border-radius: 50%;
+    }
+}
