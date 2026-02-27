@@ -28,3 +28,30 @@ input:focus {
     border: 1px solid rgba(212, 175, 55, 0.2);
     font-size: 0.95rem;
 }
+.safety-badge {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    padding: 20px;
+    border-top: 1px solid rgba(10, 35, 91, 0.1);
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.safety-badge strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary);
+}
+
+.safety-badge p {
+    font-size: 0.8rem;
+    margin: 0;
+}
+
+.shield-icon {
+    font-size: 2rem;
+    color: var(--accent);
+}
