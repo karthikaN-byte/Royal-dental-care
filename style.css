@@ -143,6 +143,56 @@ button:hover {
 html {
     scroll-behavior: smooth;
 }
+#team {
+    background: transparent;
+    text-align: center;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.doctor-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    border-top: 5px solid var(--accent); /* Gold top border */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+}
+
+.doctor-card:hover {
+    transform: translateY(-10px);
+}
+
+.doctor-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.doctor-card h3 {
+    margin: 10px 0 5px 0;
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+}
+
+.specialty {
+    color: var(--accent);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
 
 
 /* Map Styling */
